@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <title>Memory Game</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Custom/countdown/jquery.countdown.css" rel="stylesheet" />
+    <link href="Custom/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="Index.html" class="navbar-brand">
+                    <img class="gameLogo" src="img/logo.png" alt="Game Logo" />
+                    <span class="gameName">| Memory Game</span>
+                </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div><!--End of navbar-Header-->
+            <div class="collapse navbar-collapse navHeaderCollapse ">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">How to play</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#player1" data-toggle="modal"><b>1 Player</b></a></li>
+                            <li><a href="#player2" data-toggle="modal"><b>2 Players</b></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about" data-toggle="modal" class="nav-link">About</a></li>
+                    <li><a href="mailto:tnakevski@yahoo.com" class="nav-link">Report Problem</a></li>
+                </ul>
+            </div><!--End of navbar-Collapse-->
+        </div><!--End of Container-->
+    </div><!--End of navbar-Main-->
+    <div class="container">
+        <!-- Countdown display in 1 player mode -->
+        <div class="mode1 navbar well well-sm invisible">
+            <div class="row">
+                <div id="countDown"></div>
+            </div>
+        </div>
+        <!-- Points display in 2 players mode -->
+        <div class="mode2 navbar well well-sm invisible">
+            <div class="row">
+                <div class="col-md-4"><span id="name1"></span><span id="points1">0</span></div>
+                <div class=" col-md-4" id="activePlayerHolder"></div>
+                <div class="col-md-4" style="color:red;"><span id="name2"></span><span id="points2">0</span></div>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <!--Choose player 1 or 2-------FIRST PAGE-->
+            <div class="firstPageRow">
+                <div class="row">
+                    <h3><b>Select player mode:</b></h3>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success playerBtn btn1"><h3 class="btnName">1 Player</h3></button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success playerBtn btn2 "><h3 class="btnName">2 Players</h3></button>
+                </div>
+            </div>
+            <!--End of choose player 1 or 2-->
+            <!--Choose game mode----------SECOND PAGE-->
+            <div class="chooseMode invisible">
+                <div class="row">
+                    <h3><b>Select dificulty level:</b></h3>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success playerBtn chooseModeBtn" id="choose4" data-toggle="tooltip" data-placement="right" title="Warm Up Mode"><h3 class="btnName">4 x 4</h3></button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success playerBtn chooseModeBtn" id="choose6" data-toggle="tooltip" data-placement="right" title="Normal Mode"><h3 class="btnName">6 x 6</h3></button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success playerBtn chooseModeBtn" id="choose8" data-toggle="tooltip" data-placement="right" title="Ultimate Memory Test"><h3 class="btnName">8 x 8</h3></button>
+                </div>
+            </div>
+            <!--End of choose game mode-->
+            <!--Insert players names---------THIRD PAGE------>
+            <div class="container playerName invisible" style="text-align:center">
+                <div>
+                    <h3><b>Insert Player Name:</b></h3>
+                </div>
+                <div role="form" style="display:inline-block">
+                    <div class="form-group" style="margin-top:20px">
+                        <input type="text" class="form-control playerNameInput" id="inputPlayer1" placeholder="Player 1" data-toggle="tooltip" data-placement="right" title="Insert Name for Player 1" style="width:250px">
+                    </div>
+                    <div class="form-group" style="margin-top:20px">
+                        <input type="text" class="form-control playerNameInput" id="inputPlayer2" placeholder="Player 2" data-toggle="tooltip" data-placement="right" title="Insert Name for Player 2" style="width:250px">
+                    </div>
+                    <div class="form-group push-right">
+                        <div class="btn btn-lg btn-success nameNext">Next</div>
+                    </div>
+                </div>
+            </div>
+            <!--End of insert players names-->
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container footerContainer">
+            <h5 class="navbar-text">Designed and built by Nakevski Toni</h5>
+        </div>
+    </div>
+
+    <!---modals -->
+    <!-- How to play - 1 PLayer Mode -->
+    <div class="modal fade" id="player1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>How to play: 1 Player</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Test your memory skills by choosing one of the 3 modes:</p>
+                    <ul>
+                        <li>Warm Up (4 x 4 image grid)</li>
+                        <li>Normal (6 x 6 image grid)</li>
+                        <li>Ultimate Memory Test (8 x 8 image grid)</li>
+                    </ul>
+                    <p>Open set of two images every turn while the clock is ticking. If the two images are same they stay open and you have two images less till the end.</p>
+                    <p>Goal: Open all of the images in quickest time possible and show off to your friends.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-success">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- How to play - 2 Players Mode -->
+    <div class="modal fade" id="player2" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>How to play: 2 Players</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Choose one of the 3 modes:</p>
+                    <ul>
+                        <li>Warm Up Battle (4 x 4 image grid)</li>
+                        <li>Normal Battle (6 x 6 image grid)</li>
+                        <li>Ultimate Memory Battle (8 x 8 image grid)</li>
+                    </ul>
+                    <p>The player open set of two images in his turn. If the two images are same they stay open, the player gets a point and plays one more turn.</p>
+                    <p>Goal: Finish the game with more points than your oponent.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-success">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About the game designer -->
+    <div class="modal fade" id="about" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>About</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This game is designed and built by Nakevski Toni for individual project purposes as a part of the SEDC education.</p>
+                    <p>For any additional informations please contact me by pressing the "Contact Me" button bellow.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="mailto:tnakevski@yahoo.com"><button type="button" class="btn btn-success modalClose">Contact Me</button></a>
+                    <button type="button" data-dismiss="modal" class="btn btn-success">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal- Game Finished -->
+    <div class="modal fade" id="congratsMode" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="modalTitle"></h4>
+                </div>
+                <div class="modal-body" style="font-size:20px;">
+                    <p id="modalMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="Index.html" style="display:inline-block"><button type="button" class="btn btn-success modalClose">Close</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal - The result in 2 players mode is tie  -->
+    <div class="modal fade" id="tieMode" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>The game is tie </h4>
+                </div>
+                <div class="modal-body" style="font-size:20px;">
+                    <p>The game will continiue until one of the players win the game</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" style="display:inline-block"><button type="button" data-dismiss="modal" class="btn btn-success modalClose">Close</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="Custom/jquery.js"></script>
+    <script src="Custom/countdown/jquery.plugin.min.js"></script>
+    <script src="Custom/countdown/jquery.countdown.min.js"></script>
+
+</body>
+</html>

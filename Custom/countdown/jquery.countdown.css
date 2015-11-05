@@ -1,0 +1,26 @@
+/* jQuery Countdown styles 2.0.0. */
+
+.countdown-rtl {
+	direction: rtl;
+}
+
+.countdown-show2 .countdown-section {
+	width: 50%;   
+}
+
+.countdown-section {
+	display: block;
+	float: left;
+	font-size: 75%;
+	text-align: center;
+}
+.countdown-amount {
+    font-size: 200%;
+}
+.countdown-period {
+    display: block;
+}
+.countdown-descr {
+	display: block;
+	width: 100%;
+}

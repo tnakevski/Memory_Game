@@ -1,0 +1,216 @@
+﻿
+/*------------------------------Navbar ---------------------------------*/
+.navbar-brand:hover {
+    color: #449d44 !important;
+}
+
+.gameLogo {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-top: -15px;
+}
+
+.gameName {
+    float: right;
+}
+
+.footerContainer {
+    float: left;
+}
+
+.modal-header {
+    background-color: #222222;
+    color: white;
+}
+
+.modal-footer {
+    background-color: #222222;
+    color: white;
+}
+
+
+.nav li:hover {
+    background-color: #449d44;
+}
+
+.dropdown-menu li a:hover {
+    color: #449d44;
+}
+
+li.active a.nav-link {
+    background-color: #449d44 !important;
+}
+/*------------------------------ End of Navbar ---------------------------------*/
+
+
+/*------------------------------ Main Elements---------------------------------*/
+
+.jumbotron {
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.05), inset 0.1em 0.1em 0.1em 0.1em rgba(0,0,0,0.025);
+    padding-bottom:80px;
+}
+
+.playerBtn {
+    width: 30%;
+    height: 300%;
+    margin-top: 20px;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+    .playerBtn:hover {
+        background-image: -webkit-radial-gradient(circle, #62c462 80%, #51ad51 81%);
+    }
+
+.row {
+    text-align: center;
+}
+
+/*------------------------------ End of Elements---------------------------------*/
+
+
+/*------------------------------In game elements--------------------------------*/
+.invisible { /*Add or remove this class for page transition*/
+    display: none;
+}
+
+.col-xs-3 {
+    width: 251px;
+}
+
+.col-xs-2 {
+    width: 165px;
+    font-size: 40px !important;
+}
+
+.col-xs-1 {
+    width: 121px;
+    height: 70px !important;
+    font-size: 40px !important;
+}
+
+
+
+.invalid::-webkit-input-placeholder { /*Validator for player name input field*/
+    color: #FF0000 !important;
+}
+
+.block {
+    height: 100px;
+    display: flex;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    margin: 5px;
+    color: #fff;
+    font-size: 350%;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary {
+    background-color: #51ad51;
+}
+
+    .primary:hover {
+        background-image: -webkit-radial-gradient(circle, #62c462 80%, #51ad51 81%);
+        background-repeat: no-repeat;
+        -webkit-background-size: 200% 200%;
+        background-size: 200%;
+        background-position: 50%;
+        -webkit-transition: background-size 2s;
+        -o-transition: background-size 2s;
+        transition: background-size 2s;
+        cursor: pointer;
+    }
+
+.secondary {
+    background-color: #222222;
+}
+
+.hit {
+    background-color: #222222;
+    color: #62c462;
+}
+
+.hit2 {
+    color: red;
+}
+
+.mode2 {
+    font-size: 20px;
+    color: #62c462;
+}
+
+.mode1 {
+    font-size: 20px;
+    color: #62c462;
+}
+
+#activePlayerHolder {
+    color: #62c462;
+    font-weight: bold;
+}
+
+/*------------------------------In game elements--------------------------------*/
+
+
+
+
+/*-----------------------------------------------------Responsive------------------------*/
+
+@media only screen and (max-width:1199px) {
+
+    .col-xs-3 {
+        width: 200px;
+    }
+
+    .col-xs-2 {
+        width: 131px;
+        height: 70px;
+    }
+
+    .col-xs-1 {
+        width: 96px;
+        height: 50px !important;
+        font-size: 20px !important;
+    }
+
+    #countDown {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width:991px) {
+
+    .col-xs-3 {
+        width: 147px;
+        height: 80px;
+        font-size: 25px;
+    }
+
+    .col-xs-2 {
+        width: 95px;
+        height: 60px;
+        font-size: 25px !important;
+    }
+
+    .col-xs-1 {
+        width: 68px;
+        height: 40px !important;
+        font-size: 15px !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .nav li:hover {
+        background-color: #1f1f1f;
+    }
+
+    .btnName {
+        font-size: 100%;
+    }
+}
